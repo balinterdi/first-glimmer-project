@@ -1,6 +1,14 @@
 <div class="rating-panel">
   {{#each stars key="@index" as |star|}}
-    <span>{{star}}</span>
+    {{#if star.full}}
+      <a href="#"
+         class="star-rating glyphicon glyphicon-star">
+      </a>
+    {{else}}
+      <a href="#"
+         class="star-rating glyphicon glyphicon-star-empty">
+      </a>
+    {{/if}}
   {{/each}}
 </div>
 
