@@ -13,6 +13,7 @@ export default class StarRating extends Component {
 
   @tracked('args')
   get stars() {
+    console.log(this.args.rating, this.args.maxRating);
     let rating = Math.round(this.args.rating);
     let fullStars = this.starRange(1, rating, 'full');
     let emptyStars = this.starRange(rating + 1, this.args.maxRating, 'empty');
@@ -26,4 +27,9 @@ export default class StarRating extends Component {
     }
     return starsData;
   };
+
+  setRating(rating) {
+    this.args.update(rating);
+  };
+
 };

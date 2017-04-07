@@ -2,11 +2,13 @@
   {{#each stars key="@index" as |star|}}
     {{#if star.full}}
       <a href="#"
-         class="star-rating glyphicon glyphicon-star">
+         class="star-rating glyphicon glyphicon-star"
+         onclick={{action setRating star.rating}}>
       </a>
     {{else}}
       <a href="#"
-         class="star-rating glyphicon glyphicon-star-empty">
+         class="star-rating glyphicon glyphicon-star-empty"
+         onclick={{action setRating star.rating}}>
       </a>
     {{/if}}
   {{/each}}
